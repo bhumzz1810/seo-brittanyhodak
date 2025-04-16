@@ -43,6 +43,12 @@ a:hover {
   color: #d1d5db;
 }
 
+/* Nav */
+.main-nav {
+  width: 100%;
+  position: relative;
+}
+
 .main-nav ul {
   list-style: none;
   padding: 0;
@@ -56,6 +62,19 @@ a:hover {
 .main-nav a {
   color: #ffffff;
   font-weight: 500;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /* Hero section */
@@ -171,6 +190,78 @@ footer a {
   color: #93c5fd;
 }
 
+/* Utility Layouts */
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 40px;
+}
+
+.hero-text,
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.content-section .container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 20px 0;
+}
+
+/* Responsive Queries */
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 10px;
+}
+
+/* Mobile layout fix */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 1001;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    background-color: #1f2937;
+    padding: 15px 20px;
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .main-nav ul.show {
+    display: flex;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero {
     padding: 30px 20px;
@@ -209,12 +300,24 @@ footer a {
   .main-nav ul {
     flex-direction: column;
     gap: 10px;
+    display: none;
+    background-color: #1f2937;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .main-nav ul.show {
+    display: flex;
   }
 
   .main-nav a {
     display: block;
     padding: 8px 0;
     font-size: 1rem;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .hero {
